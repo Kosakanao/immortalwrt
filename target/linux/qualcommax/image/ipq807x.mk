@@ -676,3 +676,16 @@ define Device/verizon_cr1000a
 	DEVICE_PACKAGES := ipq-wifi-verizon_cr1000a ath11k-firmware-qcn9074-ddwrt kmod-phy-realtek
 endef
 TARGET_DEVICES += verizon_cr1000a
+
+define Device/tplink_tl-er2260t
+	$(call Device/FitImage)
+	$(call Device/UbiFit)
+	DEVICE_VENDOR := TP-Link
+	DEVICE_MODEL := TL-ER2260T
+	BLOCKSIZE := 128k
+	PAGESIZE := 2048
+	DEVICE_DTS_CONFIG := config@hk07
+	SOC := ipq8070
+	DEVICE_PACKAGES := kmod-usb-ledtrig-usbport
+endef
+TARGET_DEVICES += tplink_tl-er2260t

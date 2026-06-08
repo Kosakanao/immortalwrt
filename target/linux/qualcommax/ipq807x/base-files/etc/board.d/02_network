@@ -11,6 +11,9 @@ ipq807x_setup_interfaces()
 	local board="$1"
 
 	case "$board" in
+	tplink,tl-er2260t)
+		ucidef_set_interfaces_lan_wan "ge1 ge2 ge3 ge4 10ge1" "10ge2"
+		;;
 	aliyun,ap8220|\
 	edgecore,eap102|\
 	tcl,linkhub-hh500v|\
