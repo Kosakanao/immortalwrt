@@ -1,16 +1,17 @@
 // SPDX-License-Identifier: GPL-2.0-only
-/* Copyright (c) 2020 The Linux Foundation. All rights reserved.
- */
+/* Copyright (c) 2020 The Linux Foundation. All rights reserved. */
 
 /dts-v1/;
 
-#include "ipq8074-512m.dtsi"
+#include "ipq8074.dtsi"
 #include "ipq8074-ess.dtsi"
 #include "ipq8074-nss.dtsi"
 #include "ipq8074-hk-cpu.dtsi"
+
 #include <dt-bindings/input/input.h>
 #include <dt-bindings/gpio/gpio.h>
 #include <dt-bindings/leds/common.h>
+
 / {
 	model = "TP-Link TL-ER2260T";
 	compatible = "tplink,tl-er2260t", "qcom,ipq8074";
@@ -339,8 +340,7 @@
 
 	nand@0 {
 		reg = <0>;
-		#address-cells = <1>;
-		#size-cells = <1>;
+		
 		nand-ecc-strength = <4>;
 		nand-ecc-step-size = <512>;
 		nand-bus-width = <8>;
@@ -437,8 +437,6 @@
 	status = "okay";
 
 	flash@0 {
-		#address-cells = <1>;
-		#size-cells = <1>;
 		reg = <0>;
 		linux,modalias = "m25p80", "mx25u6435f", "mx30uf2g18ac", "n25q128a11";
 		compatible = "micron, mx25u6435f", "jedec,spi-nor";
